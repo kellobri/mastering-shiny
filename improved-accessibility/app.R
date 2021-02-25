@@ -4,8 +4,11 @@
 #
 
 library(shiny)
+library(gitlink)
 
 ui <- fluidPage(
+    ribbon_css("https://github.com/kellobri/mastering-shiny/tree/main/improved-accessibility", text = "Link to the code"),
+    
     titlePanel("Reactive Alt Text Example"),
     
     sidebarPanel(
