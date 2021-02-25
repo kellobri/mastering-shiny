@@ -51,7 +51,7 @@ server <- function(input, output, session) {
         }
     })
     
-    outputOptions(output, "isCollab", suspendWhenHidden = FALSE)
+    #outputOptions(output, "isCollab", suspendWhenHidden = FALSE)
     
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
