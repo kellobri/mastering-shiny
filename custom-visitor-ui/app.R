@@ -8,8 +8,7 @@ library(gitlink)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-    conditionalPanel(condition = "output.isCollab == true",
-                     ribbon_css("https://github.com/kellobri/mastering-shiny", text = "Link to the code")),
+    tags$head(HTML('<script async defer src="https://buttons.github.io/buttons.js"></script>')),
 
     # Application title
     titlePanel("Old Faithful Geyser Data"),
@@ -21,7 +20,12 @@ ui <- fluidPage(
                         "Number of bins:",
                         min = 1,
                         max = 50,
-                        value = 30)
+                        value = 30),
+            conditionalPanel(condition = "output.isCollab == true",
+                             hr(),
+                             tags$p(tags$strong('Report a problem:')),
+                             tags$a(HTML('<a class="github-button" href="https://github.com/kellobri/mastering-shiny/issues" data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large" data-show-count="true" aria-label="Issue kellobri/mastering-shiny on GitHub">Issue</a>'))
+            )
         ),
 
         # Show a plot of the generated distribution
