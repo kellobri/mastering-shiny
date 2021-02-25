@@ -40,7 +40,7 @@ server <- function(input, output, session) {
     
     # Determine whether or not the user is a solutions engineer.
     isCollab <- reactive({
-        if ('solutions' %in% groups()){
+        if ('Solutions Engineer' %in% groups()){
             return(TRUE)
         } else{
             return(FALSE)
